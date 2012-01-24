@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+	<title>Llama Regex</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<style type="text/css">
+		.content-secondary{ width: 29%;	float: left;display:inline;	}
+		.content-primary{width: 67%;float: right;display:block;	}
+	</style>
+</head>
+<body>
+
+    <div id="mainPage" data-role="page" data-theme="a" data-position="inline" data-add-back-btn="true">
+		<div data-role="header">
+			<h1>Llama RegEx</h1>
+			<a href="#options" data-icon="gear" class="ui-btn-right">Options</a>
+		</div>
+        <div data-role="content">
+    		<fieldset class="ui-grid-a">
+    			<div class="ui-block-a"><button id="eval-button" type="submit" data-icon="check">Eval</button></div>
+    			<div class="ui-block-b"><button class="clear-button" type="submit" data-icon="delete">Cancel</button></div>
+    		</fieldset>
+    		<div data-role="fieldcontain" class="ui-hide-label">
+    			<label for="splitText">text</label>
+    			<input type="text" name="splitText" id="eval-text" value="" placeholder="text" />
+    		</div>
+    		<div data-role="fieldcontain" class="ui-hide-label">
+    			<label for="splitExpr">text</label>
+    			<input type="text" name="splitExpr" id="expr-text" value="" placeholder="expression"/>
+    		</div>
+    		<ul id="results-list" data-role="listview" data-inset="true" data-theme="a">
+    		</ul>
+        </div>
+	</div><!-- mainPage -->
+    
+    <div id="optionsPage" data-role="page" data-theme="a" data-add-back-btn="true">
+    	<div data-role="header">
+			<h1>Llama RegEx Options</h1>
+			<a data-icon="option">Options</a>
+		</div>
+        <div data-role="content">
+        </div>
+    </div><!-- optionsPage -->
+    
+    <script id="body-content-tmpl" type="text/template">
+	</script>
+	<script id="result-tmpl" type="text/template">
+		{{#data}}
+		<li data-theme="c"><h3>{{value}}</h3></li>
+		{{/data}}
+	</script>
+    
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.mustache.js"></script>
+	<script type="text/javascript" src="scripts/safe.js"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+</body>
+</html>
